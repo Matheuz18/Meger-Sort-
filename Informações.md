@@ -7,4 +7,4 @@ Com 5 tipos de Ordenação:
 2-Ordem Desordenada
 3-metade crescente, metade decrescente;
 4-metade decrescente, metade crescente
-5-desordenado
+5-desordenado(Sem meger sort, apenas para teste);
