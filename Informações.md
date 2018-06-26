@@ -1,4 +1,4 @@
-# Meger-Sort
+# Merge-Sort
 Código comentado em Portugues
 
 Com 5 tipos de Ordenação:
