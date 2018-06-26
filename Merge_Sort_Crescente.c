@@ -1,35 +1,35 @@
 #include<stdio.h>
 #include<stdlib.h>
 
-//Função para mesclar matrizes L e R em A.
-//lefCount = número de elementos em L
-//rightCount = número de elementos em R.
+//FunÃ§Ã£o para mesclar matrizes L e R em A.
+//lefCount = nÃºmero de elementos em L
+//rightCount = nÃºmero de elementos em R.
 void Merge(int *A,int *L,int leftCount,int *R,int rightCount) {
 	int i,j,k;
 
-	//i - para marcar o índice de aubarray esquerdo (L)
-	//j - para marcar o índice do sub-raay direito (R)
-	//k - para marcar o índice do subarray mesclado (A)
+	//i - para marcar o Ã­ndice de aubarray esquerdo (L)
+	//j - para marcar o Ã­ndice do sub-raay direito (R)
+	//k - para marcar o Ã­ndice do subarray mesclado (A)
 	i = 0; j = 0; k =0;
 
 	while(i<leftCount && j< rightCount) {
-		if(L[i]  < R[j]) A[k++] = L[i++]; // < para crescente (garante que o anterior é sempre menor que o anterior)
+		if(L[i]  < R[j]) A[k++] = L[i++]; // < para crescente (garante que o anterior Ã© sempre menor que o anterior)
 		else A[k++] = R[j++];
 	}
 	while(i < leftCount) A[k++] = L[i++];
 	while(j < rightCount) A[k++] = R[j++];
 }
 
-//Função recursiva para classificar uma matriz de inteiros.
+//FunÃ§Ã£o recursiva para classificar uma matriz de inteiros.
 void MergeSort(int *A,int n) {
 	int mid,i, *L, *R;
-	if(n < 2) return;//condição de base. Se o array tiver menos de dois elementos, não faça nada. 
+	if(n < 2) return;//condiÃ§Ã£o de base. Se o array tiver menos de dois elementos, nÃ£o faÃ§a nada. 
 
-	mid = n/2; // encontre o índice médio.
+	mid = n/2; // encontre o Ã­ndice mÃ©dio.
 
 	//criar subarrays esquerdo e direito
-	//Os elementos intermediários (do índice 0 até o meio-1) devem fazer parte da sub-matriz esquerda
-	//e (n-mid) elementos (do meio ao n-1) farão parte do sub-array direito
+	//Os elementos intermediÃ¡rios (do Ã­ndice 0 atÃ© o meio-1) devem fazer parte da sub-matriz esquerda
+	//e (n-mid) elementos (do meio ao n-1) farÃ£o parte do sub-array direito
 	L = (int*)malloc(mid*sizeof(int)); 
 	R = (int*)malloc((n- mid)*sizeof(int)); 
 	
@@ -61,10 +61,10 @@ int main() {
 	CriaArray(A,tam); // Criando array aleatorio
 	int i,numberOfElements;
 
-    // encontrar o número de elementos na matriz como tamanho da matriz completa em bytes divididos pelo tamanho do inteiro em bytes.
-	// Isso não funcionará se array for passado para a função porque array
-	// é sempre passado por referência através de um ponteiro. Portanto, a função sizeOf dará o tamanho do ponteiro e não o array.
-	// Veja este vídeo para entender este conceito - http://www.youtube.com/watch?v=CpjVucvAc3g
+    // encontrar o nÃºmero de elementos na matriz como tamanho da matriz completa em bytes divididos pelo tamanho do inteiro em bytes.
+	// Isso nÃ£o funcionarÃ¡ se array for passado para a funÃ§Ã£o porque array
+	// Ã© sempre passado por referÃªncia atravÃ©s de um ponteiro. Portanto, a funÃ§Ã£o sizeOf darÃ¡ o tamanho do ponteiro e nÃ£o o array.
+	// Veja este vÃ­deo para entender este conceito - http://www.youtube.com/watch?v=CpjVucvAc3g
 	
 	numberOfElements = sizeof(A)/sizeof(A[0]); 
 
