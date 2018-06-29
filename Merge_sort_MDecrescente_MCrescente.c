@@ -1,7 +1,7 @@
 /* Merge sort in C */
 #include<stdio.h>
 #include<stdlib.h>
-
+#include<time.h>
 //Função para mesclar matrizes L e R em A.
 //lefCount = número de elementos em L
 //rightCount = número de elementos em R.
@@ -79,8 +79,9 @@ void MergeSortD(int *A,int n) {
 }
 void CriaArray(int *A,int tam){
 	int i;
+	srand(time(NULL));
 	for(i=0;i<tam;i++){
-		*A = rand()% 10000;
+		*A = rand()% 100;
 		A++;
 	}
 	
